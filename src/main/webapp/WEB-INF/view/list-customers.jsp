@@ -2,11 +2,20 @@
 
 <!DOCTYPE html>
 <html>
-<header>
+<head>
+<link type="text/css" rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/style.css"
+/>
+
 <title> List Customers </title>
-</header>
+
+</head>
 <body>
+<div id="wrapper">
+<div id="header">
 <h2> List customers </h2>
+</div>
+</div>
+
 <table>
 <tr>
 <th>First Name </th><th>Last Name </th><th>Email</th>
