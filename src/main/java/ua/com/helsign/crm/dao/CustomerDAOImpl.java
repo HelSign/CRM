@@ -19,9 +19,26 @@ public class CustomerDAOImpl implements CustomerDAO {
     public List<Customer> getCustomers() {
 
         Session session = sessionFactory.getCurrentSession();
-        Query<Customer> query = session.createQuery("from Customer", Customer.class);
+        Query<Customer> query = session.createQuery("from Customer order by lastName", Customer.class);
         List<Customer> customers = query.getResultList();
 
         return customers;
+    }
+
+    public void saveCustomer(Customer customer) {
+        Session session = sessionFactory.getCurrentSession();
+        session.saveOrUpdate(customer);
+    }
+
+    public Customer getCustomer(int customerId) {
+        Session session = sessionFactory.getCurrentSession();
+        return session.get(Customer.class, customerId);
+    }
+
+    public void deleteCustomer(int customerId) {
+        Session session = sessionFactory.getCurrentSession();
+        Query query = session.createQuery("delete from Customer where id=:customerId");
+        query.setParameter("customerId",customerId);
+        query.executeUpdate();
     }
 }
