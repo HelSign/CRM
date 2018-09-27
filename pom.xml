@@ -17,7 +17,7 @@
         <junit.jupiter.version>5.2.0</junit.jupiter.version>
         <junit.platform.version>1.2.0</junit.platform.version>
         <postgresql.version>42.2.2</postgresql.version>
-        <org.springframework.version>5.0.6.RELEASE</org.springframework.version>
+        <org.springframework.version>5.0.7.RELEASE</org.springframework.version>
 
     </properties>
 
@@ -48,6 +48,13 @@
             <artifactId>spring-jdbc</artifactId>
             <version>${org.springframework.version}</version>
         </dependency>
+        <!-- https://mvnrepository.com/artifact/org.springframework/spring-aop -->
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-aop</artifactId>
+            <version>${org.springframework.version}</version>
+        </dependency>
+
 
         <!-- https://mvnrepository.com/artifact/c3p0/c3p0 -->
         <dependency>
